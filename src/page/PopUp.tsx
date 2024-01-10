@@ -3,8 +3,14 @@ import { GlobalButton } from "./GlobalButton";
 import { Input } from "./Input";
 import { BsGithub, BsTwitter } from "react-icons/bs";
 import pc from "../Assets/775118.jpg";
+import { useState } from "react";
+import { createTask } from "../api/api";
 
 export const PopUp = ({ dark, label, split, card }: any) => {
+
+  const [price, setPrice] = useState("")
+  const [product, setProduct] = useState("")
+
   return (
     <div>
       <div
@@ -53,12 +59,20 @@ export const PopUp = ({ dark, label, split, card }: any) => {
                   label={label ? "Product" : ""}
                   placeholder={label ? "" : "Product"}
                   className="w-full"
+                  value={product}
+                  onChange={(e:any)=>{
+                    setProduct(e?.target?.value)
+                  }}
                 />
                 <Input
                   label={label ? "Price" : ""}
                   className="w-full"
                   uText={label && !split && !card ? "Forgot password" : ""}
                   placeholder={label ? "" : "Price"}
+                  value={price}
+                  onChange={(e:any)=>{
+                    setPrice(e?.target?.value)
+                  }}
                 />
               </div>
 
@@ -68,6 +82,12 @@ export const PopUp = ({ dark, label, split, card }: any) => {
                 text="Add Product"
                 size={"sm"}
                 className="bg-violet-500 w-full py-2 justify-center text-[16px] my-5"
+                onClick={()=>{
+                  createTask({price, product}).then((res: any)=>{
+                    console.log("res", res);
+                    
+                  })
+                }}
               />
 
               {split || card ? "" : ""}
