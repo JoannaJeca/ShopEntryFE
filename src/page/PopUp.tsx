@@ -62,37 +62,15 @@ export const PopUp = ({ dark, label, split, card }: any) => {
                 />
               </div>
 
-              {label && !split && !card ? (
-                ""
-              ) : (
-                <div className="flex items-center my-5 justify-between">
-                  <div className="flex gap-4">
-                    <input type="checkbox" />
-                    <div>Remember me</div>
-                  </div>
-                  <div className="text-violet-500">
-                    <strong>Forgot password?</strong>
-                  </div>
-                </div>
-              )}
+              {label && !split && !card ? "" : ""}
 
               <GlobalButton
-                text="Sign in"
+                text="Add Product"
                 size={"sm"}
                 className="bg-violet-500 w-full py-2 justify-center text-[16px] my-5"
               />
 
-              {split || card ? (
-                ""
-              ) : (
-                <center className="text-sm text-black dark:text-white">
-                  Not a member?{" "}
-                  <span className="text-violet-500 ">
-                    {" "}
-                    Start a 14 day free trial
-                  </span>
-                </center>
-              )}
+              {split || card ? "" : ""}
 
               {split || card ? (
                 <div>

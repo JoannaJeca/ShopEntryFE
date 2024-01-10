@@ -34,7 +34,7 @@ export const Input = ({
         )}
 
         <div
-          className={`flex  items-center relative border dark:border-[#53627f] overflow-hidden rounded-md h-[40px] ${
+          className={`flex  items-center relative border  overflow-hidden rounded-md h-[40px] ${
             error ? "border-red-500" : ""
           }`}
         >
@@ -50,7 +50,7 @@ export const Input = ({
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setState(e.target.value);
             }}
-            className={`outline-none dark:bg-[#1d2432] bg-white focus:bg-gray-300 h-full w-full border-none  flex flex-1 ${
+            className={`outline-none  bg-white focus:bg-gray-300 h-full w-full border-none  flex flex-1 ${
               icon ? "pl-6" : "pl-2"
             } ${disable ? "cursor-not-allowed" : ""}`}
           />
